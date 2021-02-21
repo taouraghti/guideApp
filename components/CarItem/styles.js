@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').height
       },
       titles:{
-        marginTop: '30%',
+        marginTop: '20%',
         width: '100%',
         alignItems: 'center'
       },
@@ -14,12 +14,16 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold'
       },
-      subtitle:{
-        fontSize: 16,
-        color: '#5c5c62'
+      texts:{
+        marginTop: '10%',
+        paddingHorizontal:30,
+        alignItems:'center',
+        justifyContent:'center'
       },
-      subtitleCTA:{
-        textDecorationLine: 'underline'
+      text:{
+        fontSize: 20,
+        color:'green',
+        fontWeight: 'bold'
       },
       image:{
         width: '100%',
@@ -27,9 +31,9 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         position:'absolute'
       },
-      buttonsContainer:{
+      footerContainer:{
         position:'absolute',
-        bottom: 50,
+        bottom: 40,
         width: '100%'
       }
 
