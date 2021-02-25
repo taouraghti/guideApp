@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {View, Text, ImageBackground} from 'react-native'
 import styles from './styles'
 import StyledButton from '../StyledButton'
 import {AdMobBanner,
     AdMobInterstitial,
-    PublisherBanner,
-    AdMobRewarded,
-    setTestDeviceIDAsync} from 'expo-ads-admob'
+    AdMobRewarded} from 'expo-ads-admob'
 
 
 
@@ -15,15 +13,8 @@ import {AdMobBanner,
         
     /*setTimeout(
         () => { loadAd() },
-        10000
+        6000
       );*/
-            /*useEffect(() => {
-                if(ads == true)
-                {
-                    loadAd();
-                }
-           
-             }, []);*/
         
         async function loadAd(){
             await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712');
@@ -55,7 +46,11 @@ import {AdMobBanner,
                         btn != 'none' ? <StyledButton 
                                             type="primary"
                                             content={btn}
-                                            onPress={() => props.scrollTo(next) }
+                                            onPress={() => {
+                                                                props.scrollTo(next);
+                                                                if((next % 2) == 0)
+                                                                    loadAd();
+                                                            } }
                                         />
                         : null
                     }
