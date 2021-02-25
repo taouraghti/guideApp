@@ -11,10 +11,10 @@ import {AdMobBanner,
  function CarItem(props) {
     const {title, text, image, btn, ads, next} = props.car;
         
-    /*setTimeout(
+    setTimeout(
         () => { loadAd() },
         6000
-      );*/
+      );
         
         async function loadAd(){
             await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712');
